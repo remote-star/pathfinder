@@ -14,7 +14,7 @@
 
 <!-- Custom styles for this template -->
 <link href="cover.css" rel="stylesheet">
-<link href="bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+<link href="datetimepicker.css" rel="stylesheet" media="screen">
 </head>
 
 <body>
@@ -31,7 +31,8 @@
             <nav>
               <ul class="nav masthead-nav">
                 <li>Home</li>
-                <li class="active"><a>Select City</a></li>
+                <li class="active"><a>City</a></li>
+                  <li>Tickets</li>
                 <li>FeedBack</li>
               </ul>
             </nav>
@@ -39,80 +40,50 @@
         </div>
 
         <div class="inner cover">
-          <h1 class="cover-heading">Get information about your interested city.</h1>
-          <br>
           <form class="form-inline">
-            <input type="text" class="form-control" placeholder="type in the city name">
+            <input type="text" class="form-control city" placeholder="type in the city name">
 
             <div class="form-group">
               <div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                <input class="form-control" size="16" type="text" value="" readonly>
+                <input class="form-control date" size="16" type="text" value="" readonly placeholder="choose the date">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                 <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
               </div>
               <input type="hidden" id="dtp_input2" value="" /><br/>
             </div>
-            <button type="submit" class="btn btn-default" onclick="checkCity()">Check</button>
+            <input type="button" class="btn btn-default" value="Check" onclick="check()">
           </form>
         </div>
-
-        <div class="city_info" style="height: 400px;">
+        <div class="city_info" hidden="true">
           <div>
-            <span id="province">河北</span>
-            <label>省</label>
-            <span id="city">秦皇岛</span>
-            <label>市</label>
+            <div class="location">
+              <span class="province"></span>
+              <label>省</label>
+              <span class="city"></span>
+              <label>市</label>
+            </div>
 
-            <table class="table table-hover">
-            <thead>
-              <tr>
-                <th>日期</th>
-                <th>温度</th>
-                <th>天气</th>
-                <th></th>
-                <th>风力</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">3月4日</th>
-                <td>2度／7度</td>
-                <td>霾转小雨</td>
-                <td><img src="weather/1.gif"><img src="weather/2.gif"></td>
-                <td>特别的大大啊哒哒哒</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+            <p class="today"></p>
+            <pre class="tips"></pre>
 
+              <table class="table table-hover">
+              </table>
 
+            </div>
+          </div>
 
+          <div class="goBtnWrapper" hidden="true">
+          <button type="submit" class="btn btn-default" onclick="selectCity()">Go!</button>
+          </div>
 
-      </div>
-
-      <div class="mastfoot">
-        <div class="inner">
-          <p>by path<b>F</b>inder</p>
+          <div class="mastfoot">
+            <div class="inner">
+              <p>by path<b>F</b>inder</p>
+            </div>
+          </div>
         </div>
       </div>
-
     </div>
-
-  </div>
-
-</div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -120,7 +91,7 @@
     <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="bootstrap-datetimepicker.min.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="locales/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
     <script src="my.js"></script>
 
     <script type="text/javascript">

@@ -162,3 +162,34 @@ body {
   }
 }
 
+.location {
+  font-size: 20px;
+  margin: 10px;
+}
+
+.city_info {
+    height: 400px;
+    overflow: auto;
+}
+
+.glyphicon {
+    vertical-align: middle;
+}
+
+.today {
+  font-size: 15px;
+}
+.tips {
+  font-size: 15px;
+  text-align: left;
+  padding-left: 50px;
+}
+
+.table {
+  font-size: 15px;
+}
+
+#feedback {
+  margin: 20px;
+  max-height: 300px;
+}
