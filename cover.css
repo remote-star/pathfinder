@@ -193,3 +193,20 @@ body {
   margin: 20px;
   max-height: 300px;
 }
+
+.date input, input.city {
+  height: 30px;
+}
+
+.date span.add-on {
+  height: 30px;
+}
+
+.location {
+  display: inline-flex;
+}
+
+.location label {
+  margin-left: 5px;
+  margin-right: 5px;
+}

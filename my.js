@@ -7,24 +7,35 @@ var data = ['河北', '秦皇岛', '54449', '54449.jpg', '2016 3-4 16:44:24', '2
 今日天气实况：气温:4℃;风向/风力:东风 3级;湿度:88%;紫外线强度:最弱。空气质量:很差', '-3℃/9℃', '3月5日 晴', '西北风转北风3-4级',
 			'0.gif', '0.gif', '-2℃/6℃', '3月6日 多云转阴', '无持续风向微风', '1.gif', '2.gif']
 
+function findData(outputs, name) {
+	for(var output in outputs) {
+		if (output['name'] === name) {
+			return output['data'];
+		}
+	}
+}
+
 function check() {
 	var city = $('input.city').val(),
 		date = $('input.date').val();
 
-	// $.ajax({
-	// 	async: false,
-	// 	url: "http://sou.qq.com/online/get_weather.php?callback=Weather&city=nanjing",
-	// 	type: "GET",
-	// 	dataType: 'jsonp',
-	// 	jsonp: 'callback',
-	// 	timeout: 5000,
-	//    success: function (json) {//客户端jquery预先定义好的callback函数,成功获取跨域服务器上的json数据后,会动态执行这个callback函数
-	//    	if(json.actionErrors.length!=0){
-	//    		alert(json.actionErrors);
-	//    	}
-	//    	console.info(json);
-	//    }
-	// });
+	$.ajax({
+		async: false,
+		url: "http://sou.qq.com/online/get_weather.php?callback=Weather&city=nanjing",
+		type: "GET",
+		dataType: 'json',
+		timeout: 5000,
+		success: function (json) {//客户端jquery预先定义好的callback函数,成功获取跨域服务器上的json数据后,会动态执行这个callback函数
+		   	if(json.actionErrors.length!=0){
+		   		alert(json.actionErrors);
+		   	}
+	   		data = findData(json['outputs'], 'output1')['string'];
+	   		showWeather();
+		}
+	});
+}
+
+function showWeather() {
 	$('span.province').html(data[0]);
 	$('span.city').html(data[1]);
 	$('.today').html(data[10]);
@@ -104,3 +115,5 @@ function check() {
 function analyze() {
 	var feedback = $('#feedback');
 }
+
+
