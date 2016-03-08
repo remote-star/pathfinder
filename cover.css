@@ -210,3 +210,12 @@ body {
   margin-left: 5px;
   margin-right: 5px;
 }
+
+.modal {
+  color: black;
+}
+
+.modal strong {
+  color: red;
+  margin : 30px;
+}

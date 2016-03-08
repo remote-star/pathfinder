@@ -30,10 +30,10 @@
               <h3 class="masthead-brand">PathFinder</h3>
               <nav>
                 <ul class="nav masthead-nav">
-                  <li>Home</li>
-                  <li>City</li>
-                  <li>Tickets</li>
-                  <li class="active"><a>FeedBack</a></li>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="select.html">City</a></li>
+                  <li><a href="tickets.html">Tickets</a></li>
+                  <li class="active"><a href="feedback.html">FeedBack</a></li>
                 </ul>
               </nav>
             </div>
@@ -46,7 +46,7 @@
               Give us your feedback, make your next trip with PathFinder even better!
             </p>
             <textarea id='feedback' class="form-control" rows="5"></textarea>
-          <button type="submit" class="btn btn-default" onclick="selectCity()">Go!</button>
+          <button type="submit" class="btn btn-default" onclick="analyze()">Go!</button>
           </div>
 
           <div class="mastfoot">
@@ -54,7 +54,26 @@
               <p>by path<b>F</b>inder</p>
             </div>
           </div>
-
+<div class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Thanks for your feedback!</h4>
+      </div>
+      <div class="modal-body">
+        <p>Your attitude is:</p>
+        <strong></strong>
+        <br>
+        <br>
+        <p>We wish to provide a better trip for you next time!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
         </div>
 
       </div>
