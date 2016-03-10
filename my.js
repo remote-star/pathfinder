@@ -67,25 +67,29 @@ function findData(outputs, name) {
 
 function check() {
 	var city = $('input.city').val(),
-		date = $('input.date').val();
+		date = $('.date input').val();
 
-	// $.ajax({
-	// 	async: false,
-	// 	url: "http://sou.qq.com/online/get_weather.php?callback=Weather&city=nanjing",
-	// 	type: "GET",
-	// 	dataType: 'json',
-	// 	timeout: 5000,
-	// 	success: function (json) {//客户端jquery预先定义好的callback函数,成功获取跨域服务器上的json数据后,会动态执行这个callback函数
-	// 	   	if(json.actionErrors.length!=0){
-	// 	   		alert(json.actionErrors);
-	// 	   	}
-	//    		data = findData(json['outputs'], 'output1')['string'];
-	//    		showWeather();
-	// 	},
-	// 	error: function (json) {//客户端jquery预先定义好的callback函数,成功获取跨域服务器上的json数据后,会动态执行这个callback函数
-	// 	   	alert('无法查到您所输入的城市，请修改或更正城市名称');
-	// 	}
-	// });
+	$.ajax({
+		async: false,
+		url: "http://sou.qq.com/online/get_weather.php?callback=Weather&city=nanjing",
+		type: "GET",
+		dataType: 'json',
+		data: {
+			city: city,
+			date: date,
+		}
+		timeout: 5000,
+		success: function (json) {//客户端jquery预先定义好的callback函数,成功获取跨域服务器上的json数据后,会动态执行这个callback函数
+		   	if(json.actionErrors.length!=0){
+		   		alert(json.actionErrors);
+		   	}
+	   		data = findData(json['outputs'], 'output1')['string'];
+	   		showWeather();
+		},
+		error: function (json) {//客户端jquery预先定义好的callback函数,成功获取跨域服务器上的json数据后,会动态执行这个callback函数
+		   	alert('无法查到您所输入的城市，请修改或更正城市名称');
+		}
+	});
 
 	data = findData(json['outputs'], 'output1')['string'];
 	showWeather();
@@ -169,6 +173,16 @@ function showWeather() {
 	$('.table').append(tr);
 	$('.city_info').show();
 	$('.goBtnWrapper').show();
+}
+
+function enableGoBtn(enable) {
+	if (!enable) {
+		$("#go-btn").addClass("disabled");
+		$("#go-btn").attr("title", "It's not suggested to have a trip on that day.");
+	} else {
+		$("#go-btn").removeClass("disabled");
+		$("#go-btn").attr("title", "");
+	}
 }
 
 function analyze() {

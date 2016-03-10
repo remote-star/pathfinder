@@ -219,3 +219,7 @@ body {
   color: red;
   margin : 30px;
 }
+
+.date input {
+  width: 120px;
+}
