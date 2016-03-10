@@ -182,11 +182,16 @@ body {
 .tips {
   font-size: 15px;
   text-align: left;
-  padding-left: 50px;
+  height: 120px;
 }
 
 .table {
   font-size: 15px;
+}
+
+table.weather th, table.weather td, table.tickets td, table.tickets th{
+    text-align: center;
+  }
 }
 
 #feedback {
