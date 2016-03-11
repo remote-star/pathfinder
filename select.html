@@ -21,11 +21,11 @@
 <body>
   <div class="site-wrapper">
 
-    <div class="site-wrapper-inner">
+    <div class="site-wrapper-inner change" id="select-wrapper">
 
       <div class="cover-container">
 
-        <div class="masthead clearfix">
+        <div class="masthead clearfix change" id="head">
           <div class="inner">
             <h3 class="masthead-brand">PathFinder</h3>
             <nav>
@@ -38,7 +38,7 @@
           </div>
         </div>
 
-        <div class="inner cover">
+        <div class="inner cover change" id="container">
           <form class="form-inline">
             <div class="form-group">
               <input type="text" class="form-control city" id="cityFrom" placeholder="from">
@@ -58,7 +58,7 @@
             </div>
             <input type="button" class="btn btn-default" value="Check" onclick="check()">
           </form>
-        </div>
+
         <div class="city_info" hidden="true">
           <div>
             <div class="location">
@@ -83,8 +83,9 @@
           <a id="go-btn" class="btn btn-default" href="feedback.html" role="button" title="">Go!</a>
           <div class="alert alert-warning" role="alert">Sorry, there is no avalible quota.</div>
         </div>
+        </div>
 
-        <div class="mastfoot">
+        <div class="mastfoot change" id="select-foot">
           <div class="inner">
             <p>by path<b>F</b>inder</p>
           </div>

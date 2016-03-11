@@ -50,6 +50,8 @@ function check() {
 
 			$('.city_info').show();
 			$('.goBtnWrapper').show();
+
+			changeStyle()
 		},
 		error: function (json) {//客户端jquery预先定义好的callback函数,成功获取跨域服务器上的json数据后,会动态执行这个callback函数
 		   	alert('无法查到您所输入的城市，请修改或更正城市名称');
@@ -147,7 +149,7 @@ function showTickets(tickets) {
 }
 
 function showGo(full) {
-	if(!full) {
+	if(full === 'Y') {
 		$('#go-btn').hide();
 		$('.alert').show();
 	} else {
@@ -224,4 +226,6 @@ function daysBetween(DateOne,DateTwo)
     return Math.abs(cha);
 }
 
-
+function changeStyle() {
+	$('.change').addClass('changed');
+}

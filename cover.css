@@ -232,3 +232,15 @@ table.weather th, table.weather td, table.tickets td, table.tickets th{
 .form-group input.city {
   width: 120px;
 }
+
+#select-wrapper.changed {
+  display: block;
+}
+
+#select-foot.changed {
+  position: static;
+}
+
+#head.changed {
+  position: static;
+}
