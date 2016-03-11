@@ -11,7 +11,7 @@ function check() {
 	var city = $('#cityTo').val(),
 		cityFrom = $('#cityFrom').val(),
 		date = $('.date input').val(),
-		data, tickets;
+		data, tickets, full;
 
 	$.ajax({
 		async: false,
@@ -42,8 +42,11 @@ function check() {
 			data = findData(json['outputs'], 'weatherResult')['string'];
 			data.splice(10, 2);
 			tickets = findData(json['outputs'], 'ticketResult')['tickets']['item'];
+			full = findData(json['outputs'], 'o_isfull');
+
 			showWeather(data);
 			showTickets(tickets);
+			showGo(full);
 
 			$('.city_info').show();
 			$('.goBtnWrapper').show();
@@ -140,6 +143,16 @@ function showTickets(tickets) {
 		td.html(ticket['noSeat']);
 		tr.append(td);
 		$('table.tickets').append(tr);
+	}
+}
+
+function showGo(full) {
+	if(!full) {
+		$('#go-btn').hide();
+		$('.alert').show();
+	} else {
+		$('#go-btn').show();
+		$('.alert').hide();
 	}
 }
 

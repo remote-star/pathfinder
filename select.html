@@ -30,9 +30,9 @@
             <h3 class="masthead-brand">PathFinder</h3>
             <nav>
               <ul class="nav masthead-nav">
-                  <li><a href="index.html">Home</a></li>
-                  <li class="active"><a href="select.html">City</a></li>
-                  <li><a href="feedback.html">FeedBack</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li class="active"><a href="select.html">City</a></li>
+                <li><a href="feedback.html">FeedBack</a></li>
               </ul>
             </nav>
           </div>
@@ -41,11 +41,11 @@
         <div class="inner cover">
           <form class="form-inline">
             <div class="form-group">
-            <input type="text" class="form-control city" id="cityFrom" placeholder="from">
+              <input type="text" class="form-control city" id="cityFrom" placeholder="from">
             </div>
 
             <div class="form-group">
-            <input type="text" class="form-control city" id="cityTo" placeholder="to">
+              <input type="text" class="form-control city" id="cityTo" placeholder="to">
             </div>
 
             <div class="form-group">
@@ -68,46 +68,47 @@
               <label>市</label>
             </div>
 
-              <table class="table table-hover weather">
-              </table>
+            <table class="table table-hover weather">
+            </table>
             <pre class="tips"></pre>
-<div class="bs-example" >
+            <div class="bs-example" >
               <table class="table table-hover tickets">
               </table>
-              </div>
-
             </div>
-          </div>
 
-          <div class="goBtnWrapper" hidden="true">
+          </div>
+        </div>
+
+        <div class="goBtnWrapper">
           <a id="go-btn" class="btn btn-default" href="feedback.html" role="button" title="">Go!</a>
-          </div>
+          <div class="alert alert-warning" role="alert">Sorry, there is no avalible quota.</div>
+        </div>
 
-          <div class="mastfoot">
-            <div class="inner">
-              <p>by path<b>F</b>inder</p>
-            </div>
+        <div class="mastfoot">
+          <div class="inner">
+            <p>by path<b>F</b>inder</p>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
- <script src="http://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/twitter-bootstrap/2.2.2/bootstrap.min.js"></script>
     <script type="text/javascript" src="demo.js" charset="UTF-8"></script>
     <script src="my.js"></script>
 
     <script type="text/javascript">
-    $(".form_date").datetimepicker({
-      format: "yyyy-mm-dd",
-      autoclose: true,
-      todayBtn: true,
-      minView: 2,
-      startDate: new Date(),
-      todayHighlight: true,
-    });
+      $(".form_date").datetimepicker({
+        format: "yyyy-mm-dd",
+        autoclose: true,
+        todayBtn: true,
+        minView: 2,
+        startDate: new Date(),
+        todayHighlight: true,
+      });
     </script>
   </body></html>
