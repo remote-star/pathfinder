@@ -228,3 +228,7 @@ table.weather th, table.weather td, table.tickets td, table.tickets th{
 .date input {
   width: 120px;
 }
+
+.form-group input.city {
+  width: 120px;
+}
