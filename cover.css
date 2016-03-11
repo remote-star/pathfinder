@@ -241,6 +241,11 @@ table.weather th, table.weather td, table.tickets td, table.tickets th{
   position: static;
 }
 
+#container.changed {
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
 #head.changed {
   position: static;
 }
