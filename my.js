@@ -18,18 +18,22 @@ function check() {
 		url: "http://sou.qq.com/online/get_weather.php?callback=Weather&city=nanjing",
 		type: "POST",
 		dataType: 'json',
-		data: {
+		headers: {
+			'Accept': 'application/json',
+			'Content-Type': 'application/json'
+		},
+		data: JSON.stringify({
 			"inputs": [
 				{
 					"name": "paras",
 					"data": {
 						"targetDate": date,
 						"startCity": cityFrom,
-						"targetCity": city,
+						"targetCity": city
 					}
 				}
 			]
-		},
+		}),
 		timeout: 5000,
 		success: function (json) {//客户端jquery预先定义好的callback函数,成功获取跨域服务器上的json数据后,会动态执行这个callback函数
 		   	// if(json.actionErrors.length!=0){
