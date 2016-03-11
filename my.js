@@ -15,7 +15,7 @@ function check() {
 
 	$.ajax({
 		async: false,
-		url: "http://sou.qq.com/online/get_weather.php?callback=Weather&city=nanjing",
+		url: "/bpm/processes?container=TR&model=STP_queryInfo&version=SN17",
 		type: "POST",
 		dataType: 'json',
 		headers: {
