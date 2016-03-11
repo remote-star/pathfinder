@@ -167,11 +167,6 @@ body {
   margin: 10px;
 }
 
-.city_info {
-    height: 400px;
-    overflow: auto;
-}
-
 .glyphicon {
     vertical-align: middle;
 }
@@ -243,7 +238,7 @@ table.weather th, table.weather td, table.tickets td, table.tickets th{
 
 #container.changed {
   margin-top: 50px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 #head.changed {
